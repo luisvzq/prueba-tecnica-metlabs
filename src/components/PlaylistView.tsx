@@ -3,7 +3,7 @@ import TrackCard from "./TrackCard";
 
 const PlaylistView = () => {
   // ID de la playlist que queramos mostrar
-  const playlistId = "37i9dQZF1DZ06evO1m0d2h?si=ef532f8137884e92";
+  const playlistId = "37i9dQZF1EIgtj4OvJCT7Q?si=7d718574229c4197";
 
   const {
     data: playlist,
@@ -47,29 +47,11 @@ const PlaylistView = () => {
       )}
 
       {playlist && (
-        <>
-          <div className="flex items-center gap-6 mb-8">
-            {playlist.images[0] && (
-              <img
-                src={playlist.images[0].url}
-                alt={playlist.name}
-                className="w-48 h-48 shadow-lg rounded-lg"
-              />
-            )}
-            <div>
-              <h1 className="text-4xl font-bold text-white mb-2">
-                {playlist.name}
-              </h1>
-              <p className="text-gray-400">{playlist.tracks.total} canciones</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {playlist.tracks.items.map(({ track }) => (
-              <TrackCard key={track.id} track={track} />
-            ))}
-          </div>
-        </>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          {playlist.tracks.items.map(({ track }) => (
+            <TrackCard key={track.id} track={track} />
+          ))}
+        </div>
       )}
     </div>
   );

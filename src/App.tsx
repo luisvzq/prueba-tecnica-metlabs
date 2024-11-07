@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useState } from "react";
 import HeroBanner from "./components/HeroBanner";
 import Navbar from "./components/Navbar";
@@ -29,20 +28,21 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-[#0D0D12]">
         <Navbar currentUser={currentUser} />
-        <main className="max-w-7xl mx-auto px-6 py-8">
+        <main className="mx-auto px-[40px]">
           <HeroBanner />
           <div className="mt-8">
-            <h2 className="text-2xl font-bold text-white mb-6">
-              Obras destacadas
-            </h2>
-            <TabNavigation onTabChange={handleTabChange} />
+            <div className="flex items-center mb-6 w-[594px] h-[28px] justify-between">
+              <h2 className="text-2xl font-bold font-raleway text-white">
+                Obras destacadas
+              </h2>
+              <TabNavigation onTabChange={handleTabChange} />
+            </div>
             <div className="mt-6">
               <PlaylistView playlistId="37i9dQZF1DXcBWIGoYBM5M" />
             </div>
           </div>
         </main>
       </div>
-      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }

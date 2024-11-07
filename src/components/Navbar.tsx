@@ -11,13 +11,15 @@ const Navbar = ({ currentUser }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-[#0D0D12]">
-      <div className="flex items-center gap-2 w-[145px] h-[37px]">
-        <img
-          src="/polygon-logo.png"
-          alt="Polygon"
-          className="w-full h-full object-cover"
-        />
+    <nav className="navbar-container flex justify-between items-center px-[40px] py-4 bg-[#0D0D12]">
+      <div className="navbar-logo-container">
+        <div className="flex items-center gap-2 mr-4">
+          <img
+            src="/polygon-logo.png"
+            alt="Polygon"
+            className="navbar-logo w-[145px] h-[37px] object-cover"
+          />
+        </div>
       </div>
 
       <div className="flex items-center gap-4">

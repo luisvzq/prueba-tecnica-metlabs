@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .hero-image-container {
+    right: 0;
+    transition: all 0.3s ease;
+  }
+
+  .hero-image {
+    transform-origin: center;
+    max-width: none;
+  }
+
+  @media (max-width: 1360px) and (min-width: 629px) {
+    .hero-image {
+      transform: scale(calc(100vw / 1360));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-image-container {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .hero-image {
+      transform: scale(calc(100vw / 1360));
+    }
+  }
+  @media (max-width: 540px) {
+    .navbar-container {
+      flex-direction: column;
+    }
+    .navbar-logo-container {
+      margin: 1rem;
+    }
+  }
+}
