@@ -1,10 +1,11 @@
 import { useSpotifyPlaylist } from "../hooks/useSpotifyPlaylist";
 import TrackCard from "./TrackCard";
 
-const PlaylistView = () => {
-  // ID de la playlist que queramos mostrar
-  const playlistId = "37i9dQZF1EIgtj4OvJCT7Q?si=7d718574229c4197";
+interface PlaylistViewProps {
+  playlistId: string;
+}
 
+const PlaylistView = ({ playlistId }: PlaylistViewProps) => {
   const {
     data: playlist,
     isLoading,

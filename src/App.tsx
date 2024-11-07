@@ -38,7 +38,7 @@ function App() {
               <TabNavigation onTabChange={handleTabChange} />
             </div>
             <div className="mt-6">
-              <PlaylistView playlistId="37i9dQZF1DXcBWIGoYBM5M" />
+              <PlaylistView playlistId="37i9dQZF1EIgtj4OvJCT7Q?si=7d718574229c4197" />
             </div>
           </div>
         </main>
