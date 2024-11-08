@@ -5,6 +5,11 @@ interface PlaylistViewProps {
   playlistId: string;
 }
 
+interface SpotifyError extends Error {
+  status: number;
+  message: string;
+}
+
 const PlaylistView = ({ playlistId }: PlaylistViewProps) => {
   const {
     data: playlist,
@@ -28,7 +33,9 @@ const PlaylistView = ({ playlistId }: PlaylistViewProps) => {
         <div className="p-4 bg-red-500 text-white rounded-lg">
           {error instanceof Error && "status" in error ? (
             <>
-              <h2 className="font-bold mb-2">Error {(error as any).status}</h2>
+              <h2 className="font-bold mb-2">
+                Error {(error as SpotifyError).status}
+              </h2>
               <p>{error.message}</p>
             </>
           ) : (
@@ -40,7 +47,7 @@ const PlaylistView = ({ playlistId }: PlaylistViewProps) => {
   }
 
   return (
-    <div className="p-6 relative">
+    <div className="relative">
       {isFetching && (
         <div className="absolute top-4 right-4">
           <div className="text-green-500">Actualizando...</div>

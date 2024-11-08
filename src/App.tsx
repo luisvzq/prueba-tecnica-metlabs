@@ -28,10 +28,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-[#0D0D12]">
         <Navbar currentUser={currentUser} />
-        <main className="mx-auto px-[40px]">
+        <main className="mx-auto px-[40px] overflow-x-hidden">
           <HeroBanner />
           <div className="mt-8">
-            <div className="flex items-center mb-6 w-[594px] h-[28px] justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6 w-[594px] h-auto sm:h-[28px] justify-between gap-4 sm:gap-0">
               <h2 className="text-2xl font-bold font-raleway text-white">
                 Obras destacadas
               </h2>

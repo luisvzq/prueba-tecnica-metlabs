@@ -13,7 +13,7 @@ const TabNavigation = ({ onTabChange }: TabNavigationProps) => {
   };
 
   return (
-    <div className="flex gap-6 w-[292px] h-[28px]">
+    <div className="flex gap-6 w-[292px] h-[28px] mr-6">
       <button
         className={`text-sm font-dm-sans transition-colors ${
           activeTab === "music"

@@ -25,7 +25,6 @@ const HeroBanner = () => {
               style={{
                 padding: "12px 30px",
                 gap: "10px",
-                lineHeight: "22px",
               }}
             >
               Suscribirse
@@ -35,7 +34,6 @@ const HeroBanner = () => {
               style={{
                 padding: "12px 30px",
                 gap: "10px",
-                lineHeight: "22px",
               }}
             >
               Descubrir planes
