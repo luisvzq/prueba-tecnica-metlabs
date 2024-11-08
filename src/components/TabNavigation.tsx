@@ -1,8 +1,5 @@
 import { useState } from "react";
-
-interface TabNavigationProps {
-  onTabChange?: (tab: string) => void;
-}
+import type { TabNavigationProps } from "../types/models";
 
 const TabNavigation = ({ onTabChange }: TabNavigationProps) => {
   const [activeTab, setActiveTab] = useState("music");

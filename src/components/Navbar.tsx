@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface NavbarProps {
-  currentUser?: {
-    name: string;
-    avatar: string;
-  };
-}
+import type { NavbarProps } from "../types/models";
 
 const Navbar = ({ currentUser }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

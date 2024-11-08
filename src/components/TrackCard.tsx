@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import { SpotifyTrack } from "../types/models";
-
-interface TrackCardProps {
-  track: SpotifyTrack;
-}
+import { TrackCardProps } from "../types/models";
 
 const TrackCard = ({ track }: TrackCardProps) => {
   const [artistAvatar, setArtistAvatar] = useState("/avatar.png");

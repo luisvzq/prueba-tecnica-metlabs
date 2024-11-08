@@ -2,6 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchPlaylist } from "../services/spotifyService";
 import type { SpotifyPlaylist } from "../types/models";
 
+interface SpotifyError extends Error {
+  status: number;
+  message: string;
+}
+
 export function useSpotifyPlaylist(playlistId: string) {
   return useQuery<SpotifyPlaylist, Error>({
     queryKey: ["playlist", playlistId],
@@ -10,7 +15,7 @@ export function useSpotifyPlaylist(playlistId: string) {
       if (
         error instanceof Error &&
         "status" in error &&
-        ([401, 404] as number[]).includes((error as any).status)
+        ([401, 404] as number[]).includes((error as SpotifyError).status)
       ) {
         return false;
       }
